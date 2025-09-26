@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joel Steven Pineda Rincón - Ingeniero de Sistemas</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables CSS Profesionales */
+        :root {
+            --primary-bg: #0f0f0f;
+            --secondary-bg: #1a1a1a;
+            --card-bg: #242424;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #10b981;
+            --accent-tertiary: #8b5cf6;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --border-color: #374151;
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --gradient-secondary: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Reset y configuración base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fondo sutil y profesional */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background-image:
+                radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #10b981 0%, transparent 50%);
+        }
+
+        /* Navegación profesional */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 0;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-primary);
+        }
+
+        /* Secciones base */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section Profesional */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Imagen de perfil profesional */
+        .profile-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: var(--gradient-primary);
+            padding: 4px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        /* Sección Acerca de Mí */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .education-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 2rem;
+        }
+
+        .education-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .education-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-year {
+            color: var(--accent-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .course-badge {
+            background: var(--secondary-bg);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* Habilidades Grid Profesional */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .skill-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .level-dots {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--accent-primary);
+        }
+
+        /* Proyectos Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-secondary);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-secondary);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .project-link.demo {
+            background: var(--gradient-secondary);
+        }
+
+        .project-link.demo:hover {
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Contacto y Redes */
+        .contact {
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info {
+            margin-bottom: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* ---------------------------------------------------- */
+        /* ESTILOS DE FORMULARIO BASE */
+        /* ---------------------------------------------------- */
+        .contact-form {
+            max-width: 700px;
+            margin: 30px auto 50px auto;
+            padding: 30px;
+            background: var(--secondary-bg, #1a1a1a);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor dinámico de ubicación */
+        .location-container {
+            display: block;
+            width: 100%;
+        }
+
+        /* Grid para selectores de Colombia (se activa con JS) */
+        .colombia-selectors-grid {
+            display: none;
+            /* Oculto por defecto */
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        /* Estilos de Campos */
+        .contact-form input[type="text"],
+        .contact-form input[type="tel"],
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 0px;
+            /* Ajustado para el grid */
+            border: 1px solid var(--border-color, #374151);
+            border-radius: 8px;
+            background-color: var(--input-bg, #242424);
+            color: var(--text-primary, #ffffff);
+            transition: all 0.3s ease;
+            appearance: none;
+        }
+
+        /* ---------------------------------------------------- */
+        /* RESPONSIVENESS */
+        /* ---------------------------------------------------- */
+        @media (max-width: 768px) {
+            .form-group-grid {
+                grid-template-columns: 1fr;
+                /* Apilar en una sola columna */
+                gap: 15px;
+            }
+
+            .contact-form {
+                padding: 15px;
+            }
+
+            /* Asegurar que los selectores de Colombia mantengan el stack */
+            .colombia-selectors-grid {
+                gap: 15px;
+            }
+        }
+
+
+        /* ---------------------------------------------------- */
+        /* ANIMACIÓN DE BOTÓN PROFESIONAL */
+        /* ---------------------------------------------------- */
+        #submit-button {
+            /* Estado inicial */
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 250px;
+            height: 50px;
+            padding: 0;
+            margin: 10px auto 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: var(--accent-primary, #3b82f6);
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            /* Transición elástica */
+        }
+
+        /* Contenido del botón */
+        .button-content,
+        .button-loading,
+        .button-success {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        /* Íconos de carga y éxito (ocultos por defecto) */
+        .button-loading,
+        .button-success {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        /* ESTADO DE CARGA (loading) */
+        #submit-button[data-state="loading"] {
+            width: 50px;
+            /* Se contrae */
+            border-radius: 50%;
+            background-color: var(--accent-secondary, #00ffaa);
+            /* Nuevo color de transición */
+
+            .button-content {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            .button-loading {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ESTADO DE ÉXITO (success) */
+        #submit-button[data-state="success"] {
+            width: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-secondary, #2bff00);
+            /* Verde de éxito */
+
+            .button-content,
+            .button-loading {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            .button-success {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ESTADO DE ERROR (error) */
+        #submit-button[data-state="error"] {
+            background-color: #ef4444;
+            /* Rojo de error */
+        }
+
+        /* Estilos para los mensajes de estado */
+        .form-status {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            transition: opacity 0.4s ease;
+        }
+
+        .form-status.success {
+            color: #10b981;
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+
+        .form-status.error {
+            color: #ef4444;
+            background-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: white;
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+        }
+
+        .social-link.github:hover {
+            background: #333;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-link.twitter:hover {
+            background: #1da1f2;
+        }
+
+        .social-link.whatsapp:hover {
+            background: #2db31b;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(15, 15, 15, 0.98);
+                backdrop-filter: blur(20px);
+                padding: 2rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .contact {
+                padding: 2rem 1rem;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animaciones suaves */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ---------------------------------------------------- */
+        /* ESTILO PROFESIONAL PARA EL INDICADOR DE ESTADO ACTIVO */
+        /* ---------------------------------------------------- */
+
+        .status-active {
+            /* Color de fondo sutil usando el color de acento verde (10b981) */
+            background-color: rgba(16, 185, 129, 0.15);
+            /* Color de texto completo del acento */
+            color: var(--accent-secondary, #00ffaa);
+
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            /* Un poco más pequeño que el texto secundario normal */
+            font-weight: 600;
+
+            /* Pequeña separación visual para que parezca una etiqueta */
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* OPCIONAL: Añadir un punto verde parpadeante */
+        .status-active::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-secondary, #00ff0d);
+            border-radius: 50%;
+            box-shadow: 0 0 5px var(--accent-secondary, #10b981);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fondo profesional -->
+    <div class="bg-pattern"></div>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">Joel Pineda</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#about">Acerca de</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Joel Steven Pineda Rincón</h1>
+                <p class="subtitle">Ingeniero de Sistemas | Especialista en Desarrollo & Ciberseguridad</p>
+                <p>Estudiante de Ingeniería de Sistemas con múltiples certificaciones en desarrollo de
+                    software y ciberseguridad. Apasionado por crear soluciones tecnológicas innovadoras desde Cúcuta,
+                    Colombia.</p>
+                <a href="#about" class="hero-cta">
+                    <i class="fas fa-user"></i>
+                    Conocer más
+                </a>
+            </div>
+            <div class="profile-image">
+                <div class="profile-container">
+                    <div class="profile-img">
+                        <!-- Aquí puedes agregar tu foto profesional -->
+
+                        <img src="https://scontent.fcuc2-1.fna.fbcdn.net/v/t39.30808-1/526718996_1812089346379776_7667123633998498719_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeE5MZT1T4Sym3cwTkZw1sVOuA-lK59IfSu4D6Urn0h9K3pAmNSd9XFVTScY8gd0GWGMD9RvSVV5Lwzo5jHmc5Ev&_nc_ohc=dOFXojd0ctQQ7kNvwF4-OUX&_nc_oc=Admj5ldyVN0WFLUlPsVYDn01zgA7lAEE5SJDUry-J77ds78sEWhVeVu3QVopvUu29dk&_nc_zt=24&_nc_ht=scontent.fcuc2-1.fna&_nc_gid=_WG_FwIH2yYt8FMy7An4xA&oh=00_AfaOj6iV6lUc5R3nDxrurgRmdMaokcXDaVQsREL412q8pw&oe=68DC85CC"
+                            alt="Joel Pineda"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de Mí -->
+    <section id="about" class="fade-in">
+        <h2 class="section-title">Formación Académica y Profesional</h2>
+        <div class="about-content">
+            <div class="education-section">
+                <h3>Educación Formal</h3>
+
+                <div class="education-item">
+                    <div class="education-title">Ingeniería de Sistemas</div>
+                    <div class="education-year">Finalización | 2026</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-title">Tecnólogo en Gestión de Redes de Datos</div>
+                    <div class="education-year">Finalización 2026</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-title">Tecnólogo en Análisis y Desarrollo de Sistemas</div>
+                    <div class="education-year">Finalizado 2022</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-title">Técnico en Contabilidad y Finanzas</div>
+                    <div class="education-year">Finalizado 2023</div>
+                </div>
+            </div>
+
+            <div class="certifications-section">
+                <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">Certificaciones Profesionales</h3>
+                <div class="courses-grid">
+                    <div class="course-badge">Ciberseguridad Fortinet </div>
+                    <div class="course-badge">Seguridad Informática Coursera </div>
+                    <div class="course-badge">Seguridad de la Información Udemy </div>
+                    <div class="course-badge">Administración Redes SENA </div>
+                    <div class="course-badge">Laboratorios SENNOVA </div>
+                    <div class="course-badge">Análisis Financiero SENA </div>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">Información Personal</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7;">
+                        <strong>Nacimiento:</strong> 20 de Julio, 2003<br>
+                        <strong>Edad:</strong> <span id="edad-actual"></span><br>
+                        <strong>Ubicación:</strong> Cúcuta, Norte de Santander<br>
+                        <strong>Universidad:</strong> Universidad Simón Bolívar<br>
+                        <strong>Estudio:</strong> 8vo Semestre - Ingeniería de Sistemas<br>
+                        <strong>Estado Civil:</strong> Soltero<br>
+                        <strong>Contacto Directo:</strong> <a href="https://wa.me/573133118664" target="_blank"
+                            style="color: var(--accent-primary); margin-bottom: 1rem;">3133118664</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="soft-skills" class="fade-in">
+        <h2 class="section-title">Habilidades Blandas</h2>
+        <div class="skills-grid">
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-users-gear"></i>
+                    </div>
+                    <div class="skill-name">Liderazgo</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Dirección
+                        Estratégica</span>
+                </div>
+                <p style="color: var(--text-secondary);">Capacidad para guiar, motivar y movilizar equipos hacia
+                    objetivos comunes, fomentando la responsabilidad.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-handshake-angle"></i>
+                    </div>
+                    <div class="skill-name">Trabajo en Equipo</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Sinergia
+                        Colaborativa</span>
+                </div>
+                <p style="color: var(--text-secondary);">Fomento de un ambiente de apoyo, comunicación efectiva y logro
+                    de metas mediante la colaboración activa.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-person-digging"></i>
+                    </div>
+                    <div class="skill-name">Autogestión</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Proactividad
+                        Autónoma</span>
+                </div>
+                <p style="color: var(--text-secondary);">Capacidad para planificar, ejecutar y monitorear tareas de
+                    forma independiente, asumiendo la responsabilidad del resultado.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="skill-name">Disciplina</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Constancia y
+                        Enfoque</span>
+                </div>
+                <p style="color: var(--text-secondary);">Compromiso con la consistencia y el rigor en el cumplimiento de
+                    metodologías y estándares de trabajo.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-heart-circle-check"></i>
+                    </div>
+                    <div class="skill-name">Empatía</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Comprensión
+                        Humana</span>
+                </div>
+                <p style="color: var(--text-secondary);">Habilidad para entender las perspectivas y necesidades de los
+                    demás, crucial para la gestión de clientes y equipos.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-arrow-up-9-1"></i>
+                    </div>
+                    <div class="skill-name">Pensamiento Estratégico</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Visión a Largo
+                        Plazo</span>
+                </div>
+                <p style="color: var(--text-secondary);">Capacidad para prever escenarios, alinear las tareas diarias
+                    con los objetivos macro y optimizar recursos.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-stopwatch-20"></i>
+                    </div>
+                    <div class="skill-name">Gestión del Tiempo</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Productividad
+                        Máxima</span>
+                </div>
+                <p style="color: var(--text-secondary);">Eficacia en la priorización de tareas, el establecimiento de
+                    límites y el cumplimiento riguroso de los plazos.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="skill-name">Adaptabilidad</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Respuesta al
+                        Cambio</span>
+                </div>
+                <p style="color: var(--text-secondary);">Flexibilidad ante cambios de requisitos, metodologías o
+                    entornos, manteniendo siempre la eficiencia y el enfoque.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="skill-name">Resolución de Problemas</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Mente
+                        Solucionadora</span>
+                </div>
+                <p style="color: var(--text-secondary);">Enfoque metódico y creativo para identificar la raíz de los
+                    desafíos y generar soluciones prácticas y duraderas.</p>
+            </div>
+
+            <div class="skill-card section-item-hidden">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="skill-name">Inteligencia Emocional</div>
+                </div>
+                <div class="skill-level">
+                    <span style="color: var(--accent-primary); font-size: 0.9rem; font-weight: 600;">Manejo
+                        Interpersonal</span>
+                </div>
+                <p style="color: var(--text-secondary);">Conciencia y gestión de emociones propias y ajenas, esencial
+                    para la comunicación y la gestión de conflictos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="fade-in">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Análisis de datos para ONGs, automatización de procesos y
+                    desarrollo backend.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-name">SQL</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Diseño, optimización y gestión de bases de datos relacionales.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Bueno</span>
+                </div>
+                <p style="color: var(--text-secondary);">Desarrollo frontend/backend, integración con APIs y Apps
+                    Script.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="skill-name">Apps Script</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Profesional</span>
+                </div>
+                <p style="color: var(--text-secondary);">Automatización de Google Workspace y desarrollo de soluciones
+                    empresariales.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="skill-name">Ciberseguridad</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Auditoría de sistemas, seguridad informática y protección de
+                    datos.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="skill-name">Gestión de Proyectos</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Diagramas, modelados, cronogramas, EDT/WBS y metodologías
+                    ágiles.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="skill-name">Redes y Comunicaciones</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Administración y gestión de infraestructura de red empresarial.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="skill-name">Análisis Financiero</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Avanzado</span>
+                </div>
+                <p style="color: var(--text-secondary);">Evaluación de proyectos, análisis de rentabilidad y gestión
+                    financiera.</p>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-pied-piper-hat"></i>
+                    </div>
+                    <div class="skill-name">Inglés Técnico</div>
+                </div>
+                <div class="skill-level">
+                    <div class="level-dots">
+                        <div class="dot active"></div>
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Medio</span>
+                </div>
+                <p style="color: var(--text-secondary);">Capacidad para leer documentación técnica, escribir correos y
+                    mantener conversaciones básicas en entornos laborales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">Proyectos Profesionales</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-title">SGL PRO - Sistema de Gestión de Préstamos</h3>
+                <p class="project-description">
+                    Sistema integral para la gestión profesional de préstamos con interfaz intuitiva,
+                    automatización de procesos y generación de reportes detallados. Implementa validaciones
+                    avanzadas y cálculos financieros precisos.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Apps Script</span>
+                    <span class="tech-tag">Google Sheets</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SystemsPlay/Entrenamiento" class="project-link">
+                        <i class="fab fa-github"></i>
+                        Código
+                    </a>
+                    <a href="https://systemsplay.github.io/Entrenamiento/login.html" class="project-link demo">
+                        <i class="fas fa-external-link-alt"></i>
+                        Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">BarrilTech - Sistema de Gestión</h3>
+                <p class="project-description">
+                    Plataforma completa de gestión empresarial desarrollada para optimizar procesos
+                    operativos, control de inventarios y administración de recursos. Incluye dashboard
+                    ejecutivo con métricas en tiempo real.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Apps Script</span>
+                    <span class="tech-tag">Google Workspace</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        Código
+                    </a>
+                    <a href="#" class="project-link demo">
+                        <i class="fas fa-external-link-alt"></i>
+                        Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">Sistema de Gestión Financiera Personal</h3>
+                <p class="project-description">
+                    Herramienta personal para el control y análisis de finanzas personales con
+                    categorización automática de gastos, proyecciones financieras y alertas
+                    inteligentes de presupuesto.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Apps Script</span>
+                    <span class="tech-tag">Charts API</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SystemsPlay/GestionFinanciera" class="project-link">
+                        <i class="fab fa-github"></i>
+                        Código
+                    </a>
+                    <a href="https://systemsplay.github.io/pruebas/" class="project-link demo">
+                        <i class="fas fa-external-link-alt"></i>
+                        Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">Sistema Exclusivo - La Victoria Cruzada Cristiana</h3>
+                <p class="project-description">
+                    Sistema empresarial personalizado desarrollado específicamente para La Victoria
+                    Cruzada Cristiana, optimizando sus procesos organizacionales, gestión de eventos
+                    y administración de recursos.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Apps Script</span>
+                    <span class="tech-tag">Google Cloud</span>
+                    <span class="tech-tag">Custom APIs</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fas fa-lock"></i>
+                        Privado
+                    </a>
+                    <a href="#" class="project-link demo">
+                        <i class="fas fa-info-circle"></i>
+                        Info
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">Análisis de Datos para ONGs con Python</h3>
+                <p class="project-description">
+                    Herramientas de análisis y procesamiento de datos desarrolladas en Python para
+                    organizaciones sin fines de lucro, incluyendo visualizaciones interactivas y
+                    reportes automatizados de impacto social.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        Privado
+                    </a>
+                    <a href="#" class="project-link demo">
+                        <i class="fas fa-chart-bar"></i>
+                        Privado
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title">Auditoría de Seguridad de Sistemas</h3>
+                <p class="project-description">
+                    Framework de auditoría de seguridad desarrollado para evaluar vulnerabilidades
+                    en sistemas empresariales, incluyendo escaneo automatizado, análisis de riesgos
+                    y generación de reportes ejecutivos.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Nmap</span>
+                    <span class="tech-tag">Security Tools</span>
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">
+                        <i class="fas fa-shield-alt"></i>
+                        Privado
+                    </a>
+                    <a href="#" class="project-link demo">
+                        <i class="fas fa-file-pdf"></i>
+                        Privado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact fade-in">
+        <h2 class="section-title">Contacto Profesional</h2>
+
+        <div class="contact-info">
+            <h3>Estoy Interesado en colaborar</h3>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Estoy disponible para proyectos de desarrollo de software, Redes y Comunicaciones, Mantenimiento de
+                equipos, Consultoría en ciberseguridad
+                y soluciones tecnológicas innovadoras. ¡Conectame y hagamos realidad tu próximo proyecto!
+            </p>
+        </div>
+
+        <form id="telegram-form" class="contact-form" action="#" method="POST">
+
+            <div class="form-group-grid">
+                <input type="text" id="nombre" name="nombre_o_empresa" placeholder="Nombre o Empresa *" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono *" required>
+            </div>
+
+            <div class="form-group-grid">
+                <select id="country" name="pais" required>
+                    <option value="">Cargando Países...</option>
+                </select>
+
+                <div id="location-container" class="location-container">
+
+                    <input type="text" id="ubicacion-generica" name="ubicacion_generica"
+                        placeholder="Ciudad/Estado/Región *" required>
+
+                    <div id="colombia-selectors" class="colombia-selectors-grid">
+                        <select id="departamento" name="departamento" required>
+                            <option value="">Seleccionar Departamento *</option>
+                        </select>
+                        <select id="municipio" name="municipio" required disabled>
+                            <option value="">Seleccionar Ciudad *</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <textarea id="concepto" name="concepto" rows="5" placeholder="Cuéntame sobre tu proyecto o concepto *"
+                required></textarea>
+
+            <div id="form-status" class="form-status" style="opacity:0;"></div>
+
+            <button type="submit" id="submit-button" class="btn btn-primary" data-state="idle">
+                <span class="button-content">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="button-text"> Enviar Comunicación</span>
+                </span>
+                <span class="button-loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </span>
+                <span class="button-success">
+                    <i class="fas fa-check"></i>
+                </span>
+            </button>
+        </form>
+
+        </div>
+        <div>
+            <strong style="color: var(--text-primary);">Disponibilidad</strong><br>
+            <span class="status-active">
+                Actualmente Abierto a Proyectos
+            </span>
+        </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://linkedin.com/in/joelpineda" class="social-link linkedin" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/JOELpineda3312" class="social-link github" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/joelpineda" class="social-link instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/joelpineda" class="social-link twitter" title="X (Twitter)">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://wa.me/573133118664" class="social-link whatsapp" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Navegación activa
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+
+            // Función para actualizar navegación activa
+            function updateActiveNav() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionHeight = section.getBoundingClientRect().height;
+
+                    if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Animaciones al scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+
+            // Event listeners
+            window.addEventListener('scroll', function () {
+                updateActiveNav();
+                animateOnScroll();
+            });
+
+            // Navegación suave
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Menú móvil
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinksContainer = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', function () {
+                navLinksContainer.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+
+            // Cerrar menú móvil al hacer clic en un enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinksContainer.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Inicializar animaciones
+            setTimeout(() => {
+                animateOnScroll();
+                updateActiveNav();
+            }, 100);
+
+            // Efectos de hover profesionales en tarjetas
+            const skillCards = document.querySelectorAll('.skill-card');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // Hover suave para skill cards
+            skillCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-4px)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Hover suave para project cards
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-4px)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Efecto de typing sutil en el nombre
+            const heroTitle = document.querySelector('.hero-text h1');
+            const originalText = heroTitle.textContent;
+
+            function typeEffect() {
+                heroTitle.style.opacity = '0';
+                setTimeout(() => {
+                    heroTitle.style.opacity = '1';
+                    heroTitle.style.animation = 'fadeInUp 1s ease forwards';
+                }, 500);
+            }
+
+            // Ejecutar después de cargar
+            setTimeout(typeEffect, 1000);
+
+            // Smooth navbar background change
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(15, 15, 15, 0.98)';
+                    nav.style.borderBottom = '1px solid rgba(59, 130, 246, 0.3)';
+                } else {
+                    nav.style.background = 'rgba(15, 15, 15, 0.95)';
+                    nav.style.borderBottom = '1px solid var(--border-color)';
+                }
+            });
+
+            // Añadir efecto de carga inicial
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Estilos adicionales para el menú móvil
+        const additionalStyles = document.createElement('style');
+        additionalStyles.textContent = `
+            .mobile-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+                background: var(--accent-primary);
+            }
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+                background: var(--accent-primary);
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Efecto profesional para imágenes de perfil */
+            .profile-img:hover::before {
+                background: linear-gradient(45deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            }
+
+            /* Animación suave para elementos */
+            * {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        `;
+        document.head.appendChild(additionalStyles);
+
+        // Console log profesional
+        console.log(`
+        %c👨‍💻 Joel Steven Pineda Rincón
+        %c🎓 Ingeniero de Sistemas en formación
+        %c🛡️ Especialista en Ciberseguridad
+        %c🌐 Desarrollador Full Stack
+        %c📍 Cúcuta, Colombia
+        
+        %c¿Interesado en colaborar? ¡Conectemos!
+        `,
+            'color: #3b82f6; font-size: 16px; font-weight: bold;',
+            'color: #10b981; font-size: 14px;',
+            'color: #8b5cf6; font-size: 14px;',
+            'color: #3b82f6; font-size: 14px;',
+            'color: #10b981; font-size: 14px;',
+            'color: #ffffff; font-size: 16px; font-weight: bold; margin-top: 10px;'
+        );
+
+
+        // ===================================================================
+        //  CONFIGURACIÓN DE TELEGRAM Y VARIABLES (ES5)
+        // ===================================================================
+        // ⚠️ ATENCIÓN: NUNCA expongas estos valores en un proyecto real. 
+        // Para producción, se recomienda usar un proxy o un servidor backend.
+        var TELEGRAM_TOKEN = "7025383809:AAHdmdzWhdCC5TA3mBtZdQPl_MI512Fkt38";
+        var CHAT_ID = "7941395763";
+
+        var countrySelect = document.getElementById('country');
+        var departamentoSelect = document.getElementById('departamento');
+        var municipioSelect = document.getElementById('municipio');
+        var ubicacionGenericaInput = document.getElementById('ubicacion-generica');
+        var colombiaSelectorsDiv = document.getElementById('colombia-selectors');
+        var submitButton = document.getElementById('submit-button');
+        var statusDiv = document.getElementById('form-status');
+        var telegramForm = document.getElementById('telegram-form');
+
+        // Lista de Países esenciales
+        var ESSENTIAL_COUNTRIES = [
+            // ===================================
+            // AMÉRICA 🌎
+            // ===================================
+            { code: 'CO', name: 'Colombia' },
+            { code: 'US', name: 'Estados Unidos' },
+            { code: 'MX', name: 'México' },
+            { code: 'AR', name: 'Argentina' },
+            { code: 'BR', name: 'Brasil' },
+            { code: 'CA', name: 'Canadá' },
+            { code: 'CL', name: 'Chile' },
+            { code: 'PE', name: 'Perú' },
+            { code: 'EC', name: 'Ecuador' },
+            { code: 'VE', name: 'Venezuela' },
+            { code: 'PA', name: 'Panamá' },
+            { code: 'CR', name: 'Costa Rica' },
+            { code: 'SV', name: 'El Salvador' },
+            { code: 'GT', name: 'Guatemala' },
+            { code: 'HN', name: 'Honduras' },
+            { code: 'NI', name: 'Nicaragua' },
+            { code: 'UY', name: 'Uruguay' },
+            { code: 'PY', name: 'Paraguay' },
+            { code: 'BO', name: 'Bolivia' },
+            { code: 'DO', name: 'República Dominicana' },
+            { code: 'CU', name: 'Cuba' },
+            { code: 'PR', name: 'Puerto Rico' },
+
+            // ===================================
+            // EUROPA 🇪🇺
+            // ===================================
+            { code: 'ES', name: 'España' },
+            { code: 'DE', name: 'Alemania' },
+            { code: 'FR', name: 'Francia' },
+            { code: 'GB', name: 'Reino Unido' },
+            { code: 'IT', name: 'Italia' },
+            { code: 'NL', name: 'Países Bajos' },
+            { code: 'SE', name: 'Suecia' },
+            { code: 'CH', name: 'Suiza' },
+            { code: 'PL', name: 'Polonia' },
+            { code: 'PT', name: 'Portugal' },
+            { code: 'BE', name: 'Bélgica' },
+            { code: 'AT', name: 'Austria' },
+            { code: 'GR', name: 'Grecia' },
+            { code: 'IE', name: 'Irlanda' },
+            { code: 'NO', name: 'Noruega' },
+            { code: 'DK', name: 'Dinamarca' },
+            { code: 'FI', name: 'Finlandia' },
+            { code: 'RU', name: 'Rusia' },
+
+            // ===================================
+            // ASIA 🌏
+            // ===================================
+            { code: 'CN', name: 'China' },
+            { code: 'JP', name: 'Japón' },
+            { code: 'IN', name: 'India' },
+            { code: 'KR', name: 'Corea del Sur' },
+            { code: 'SG', name: 'Singapur' },
+            { code: 'AE', name: 'Emiratos Árabes Unidos' },
+            { code: 'TR', name: 'Turquía' },
+            { code: 'IL', name: 'Israel' },
+            { code: 'ID', name: 'Indonesia' },
+            { code: 'TH', name: 'Tailandia' },
+            { code: 'VN', name: 'Vietnam' },
+            { code: 'MY', name: 'Malasia' },
+            { code: 'PH', name: 'Filipinas' },
+            { code: 'SA', name: 'Arabia Saudita' },
+
+            // ===================================
+            // OTRAS REGIONES (Por si acaso)
+            // ===================================
+            { code: 'AU', name: 'Australia' },
+            { code: 'NZ', name: 'Nueva Zelanda' },
+            { code: 'ZA', name: 'Sudáfrica' }
+        ];
+
+        // Data de Departamentos y Ciudades de Colombia
+        var COLOMBIA_DATA = {
+            "Amazonas": ["Leticia", "Puerto Nariño"],
+            "Antioquia": [
+                "Abejorral", "Abriaquí", "Alejandría", "Amagá", "Amalfi", "Andes", "Angelópolis",
+                "Angostura", "Anorí", "Anzá", "Apartadó", "Arboletes", "Argelia", "Armenia",
+                "Barbosa", "Bello", "Belmira", "Betania", "Betulia", "Briceño", "Buriticá",
+                "Cáceres", "Caicedo", "Caldas", "Campamento", "Cañasgordas", "Caracolí",
+                "Caramanta", "Carepa", "Carolina del Príncipe", "Caucasia", "Chigorodó",
+                "Cisneros", "Ciudad Bolívar", "Cocorná", "Concepción", "Concordia", "Copacabana",
+                "Dabeiba", "Donmatías", "Ebéjico", "El Bagre", "El Carmen de Viboral",
+                "El Peñol", "El Retiro", "El Santuario", "Entrerríos", "Envigado", "Fredonia",
+                "Frontino", "Giraldo", "Girardota", "Gómez Plata", "Granada", "Guadalupe", "Guarne",
+                "Guatapé", "Heliconia", "Hispania", "Itagüí", "Ituango", "Jardín", "Jericó",
+                "La Ceja", "La Estrella", "La Pintada", "La Unión", "Liborina", "Maceo",
+                "Marinilla", "Medellín", "Montebello", "Murindó", "Mutatá", "Nariño", "Nechí",
+                "Necoclí", "Olaya", "Peque", "Pueblorrico", "Puerto Berrío", "Puerto Nare",
+                "Puerto Triunfo", "Remedios", "Rionegro", "Sabanalarga", "Sabaneta", "Salgar",
+                "San Andrés de Cuerquia", "San Carlos", "San Francisco", "San Jerónimo",
+                "San José de la Montaña", "San Juan de Urabá", "San Luis", "San Pedro de Urabá",
+                "San Pedro de los Milagros", "San Rafael", "San Roque", "San Vicente", "Santa Bárbara",
+                "Santa Fe de Antioquia", "Santa Rosa de Osos", "Santo Domingo", "Segovia", "Sonsón",
+                "Sopetrán", "Támesis", "Tarazá", "Tarso", "Titiribí", "Toledo", "Turbo", "Uramita",
+                "Urrao", "Valdivia", "Valparaíso", "Vegachí", "Venecia", "Vigía del Fuerte", "Yalí",
+                "Yarumal", "Yolombó", "Yondó", "Zaragoza"
+            ],
+            "Arauca": ["Arauca", "Arauquita", "Cravo Norte", "Fortul", "Puerto Rondón", "Saravena", "Tame"],
+            "Atlántico": [
+                "Baranoa", "Barranquilla", "Campo de la Cruz", "Candelaria", "Galapa", "Juan de Acosta",
+                "Luruaco", "Malambo", "Manatí", "Palmar de Varela", "Piojó", "Polonuevo", "Ponedera",
+                "Puerto Colombia", "Repelón", "Sabanagrande", "Sabanalarga", "Santa Lucía", "Santo Tomás",
+                "Soledad", "Suán", "Tubará", "Usiacurí"
+            ],
+            "Bolívar": [
+                "Achí", "Altos del Rosario", "Arenal", "Arjona", "Arroyohondo", "Barranco de Loba",
+                "Brazuelo de Papayal", "Calamar", "Cantagallo", "Cartagena de Indias", "Cicuco",
+                "Clemencia", "Córdoba", "El Carmen de Bolívar", "El Guamo", "El Peñón",
+                "Hatillo de Loba", "Magangué", "Mahates", "Margarita", "María la Baja", "Mompós",
+                "Montecristo", "Morales", "Norosí", "Pinillos", "Regidor", "Río Viejo", "San Cristóbal",
+                "San Estanislao", "San Fernando", "San Jacinto del Cauca", "San Jacinto",
+                "San Juan Nepomuceno", "San Martín de Loba", "San Pablo", "Santa Catalina", "Santa Rosa",
+                "Santa Rosa del Sur", "Simití", "Soplaviento", "Talaigua Nuevo", "Tiquisio", "Turbaco",
+                "Turbaná", "Villanueva", "Zambrano"
+            ],
+            "Boyacá": [
+                "Almeida", "Aquitania", "Arcabuco", "Belén", "Berbeo", "Betéitiva", "Boavita", "Boyacá",
+                "Briceño", "Buenavista", "Busbanzá", "Caldas", "Campohermoso", "Cerinza", "Chinavita",
+                "Chiquinquirá", "Chíquiza", "Chiscas", "Chita", "Chitaraque", "Chivatá", "Chivor", "Ciénega",
+                "Cómbita", "Coper", "Corrales", "Covarachía", "CubarÁ", "Cucaita", "Cuítiva", "Duitama",
+                "El Cocuy", "El Espino", "Firavitoba", "Floresta", "Gachantivá", "Gámeza", "Garagoa",
+                "Guacamayas", "Guateque", "Guayatá", "Güicán", "Iza", "Jenesano", "Jericó", "La Capilla",
+                "La Uvita", "La Victoria", "Labranzagrande", "Macanal", "Maripí", "Miraflores", "Mongua",
+                "Monguí", "Moniquirá", "Motavita", "Muzo", "Nobsa", "Nuevo Colón", "Oicatá", "Otanche",
+                "Pachavita", "Páez", "Paipa", "Pajarito", "Panqueba", "Pauna", "Paya", "Paz del Río", "Pesca",
+                "Pisba", "Puerto Boyacá", "Quípama", "Ramiriquí", "Ráquira", "Rondón", "Saboyá", "Sáchica",
+                "Samacá", "San Eduardo", "San José de Pare", "San Luis de Gaceno", "San Mateo",
+                "San Miguel de Sema", "San Pablo de Borbur", "Santa María", "Santa Rosa de Viterbo",
+                "Santa Sofía", "Santana", "Sativanorte", "Sativasur", "Siachoque", "Soatá", "Socha", "Socotá",
+                "Sogamoso", "Somondoco", "Sora", "Soracá", "Sotaquirá", "Susacón", "Sutamarchán", "Sutatenza",
+                "Tasco", "Tenza", "Tibaná", "Tibasosa", "Tinjacá", "Tipacoque", "Toca", "Togüí", "Tópaga", "Tota",
+                "Tunja", "Tununguá", "Turmequé", "Tuta", "Tutazá", "Úmbita", "Ventaquemada", "Villa de Leyva",
+                "Viracachá", "Zetaquira"
+            ],
+            "Caldas": [
+                "Aguadas", "Anserma", "Aranzazu", "Belalcázar", "Chinchiná", "Filadelfia", "La Dorada",
+                "La Merced", "Manizales", "Manzanares", "Marmato", "Marquetalia", "Marulanda", "Neira",
+                "Norcasia", "Pácora", "Palestina", "Pensilvania", "Riosucio", "Risaralda", "Salamina",
+                "Samaná", "San José", "Supía", "Victoria", "Villamaría", "Viterbo"
+            ],
+            "Caquetá": [
+                "Albania", "Belén de los Andaquíes", "Cartagena del Chairá", "Curillo", "El Doncello",
+                "El Paujil", "Florencia", "La Montañita", "Milán", "Morelia", "Puerto Rico",
+                "San José del Fragua", "San Vicente del Caguán", "Solano", "Solita", "Valparaíso"
+            ],
+            "Casanare": [
+                "Aguazul", "Chámeza", "Hato Corozal", "La Salina", "Maní", "Monterrey", "Nunchía", "Orocué",
+                "Paz de Ariporo", "Pore", "Recetor", "Sabanalarga", "Sácama", "San Luis de Palenque",
+                "Támara", "Tauramena", "Trinidad", "Villanueva", "Yopal"
+            ],
+            "Cauca": [
+                "Almaguer", "Argelia", "Balboa", "Bolívar", "Buenos Aires", "Cajibío", "Caldono", "Caloto",
+                "Corinto", "El Tambo", "Florencia", "Guachené", "Guapí", "Inzá", "Jambaló", "La Sierra", "La Vega",
+                "López de Micay", "Mercaderes", "Miranda", "Morales", "Padilla", "Páez", "Patía", "Piamonte",
+                "Piendamó", "Popayán", "Puerto Tejada", "Puracé", "Rosas", "San Sebastián", "Santa Rosa",
+                "Santander de Quilichao", "Silvia", "Sotará", "Suárez", "Sucre", "Timbío", "Timbiquí",
+                "Toribío", "Totoró", "Villa Rica"
+            ],
+            "Cesar": [
+                "Aguachica", "Agustín Codazzi", "Astrea", "Becerril", "Bosconia", "Chimichagua", "Chiriguaná",
+                "Curumaní", "El Copey", "El Paso", "Gamarra", "González", "La Gloria (Cesar)", "La Jagua de Ibirico",
+                "La Paz", "Manaure Balcón del Cesar", "Pailitas", "Pelaya", "Pueblo Bello", "Río de Oro",
+                "San Alberto", "San Diego", "San Martín", "Tamalameque", "Valledupar"
+            ],
+            "Chocó": [
+                "Acandí", "Alto Baudó", "Bagadó", "Bahía Solano", "Bajo Baudó", "Bojayá", "Cantón de San Pablo",
+                "Cértegui", "Condoto", "El Atrato", "El Carmen de Atrato", "El Carmen del Darién", "Istmina",
+                "Juradó", "Litoral de San Juan", "Lloró", "Medio Atrato", "Medio Baudó", "Medio San Juan",
+                "Nóvita", "Nuquí", "Quibdó", "Río Iró", "Río Quito", "Riosucio", "San José del Palmar", "Sipí",
+                "Tadó", "Unión Panamericana", "Unguía"
+            ],
+            "Cundinamarca": [
+                "Agua de Dios", "Albán", "Anapoima", "Anolaima", "Apulo", "Arbeláez", "Beltrán", "Bituima",
+                "Bogotá", "Bojacá", "Cabrera", "Cachipay", "Cajicá", "Caparrapí", "Cáqueza", "Carmen de Carupa",
+                "Chaguaní", "Chía", "Chipaque", "Choachí", "Chocontá", "Cogua", "Cota", "Cucunubá", "El Colegio",
+                "El Peñón", "El Rosal", "Facatativá", "Fómeque", "Fosca", "Funza", "Fúquene", "Fusagasugá",
+                "Gachalá", "Gachancipá", "Gachetá", "Gama", "Girardot", "Granada", "Guachetá", "Guaduas", "Guasca",
+                "Guataquí", "Guatavita", "Guayabal de Síquima", "Guayabetal", "Gutiérrez", "Jerusalén", "Junín",
+                "La Calera", "La Mesa", "La Palma", "La Peña", "La Vega", "Lenguazaque", "Machetá", "Madrid",
+                "Manta", "Medina", "Mosquera", "Nariño", "Nemocón", "Nilo", "Nimaima", "Nocaima", "Pacho", "Paime",
+                "Pandi", "Paratebueno", "Pasca", "Puerto Salgar", "Pulí", "Quebradanegra", "Quetame", "Quipile",
+                "Ricaurte", "San Antonio del Tequendama", "San Bernardo", "San Cayetano", "San Francisco",
+                "San Juan de Rioseco", "Sasaima", "Sesquilé", "Sibaté", "Silvania", "Simijaca", "Soacha", "Sopó",
+                "Subachoque", "Suesca", "Supatá", "Susa", "Sutatausa", "Tabio", "Tausa", "Tena", "Tenjo", "Tibacuy",
+                "Tibirita", "Tocaima", "Tocancipá", "Topaipí", "Ubalá", "Ubaque", "Ubaté", "Une", "Útica", "Venecia",
+                "Vergara", "Vianí", "Villagómez", "Villapinzón", "Villeta", "Viotá", "Yacopí", "Zipacón", "Zipaquirá"
+            ],
+            "Córdoba": [
+                "Ayapel", "Buenavista", "Canalete", "Cereté", "Chimá", "Chinú", "Ciénaga de Oro", "Cotorra",
+                "La Apartada", "Lorica", "Los Córdobas", "Momil", "Montelíbano", "Montería", "Moñitos",
+                "Planeta Rica", "Pueblo Nuevo", "Puerto Escondido", "Puerto Libertador", "Purísima",
+                "Sahagún", "San Andrés de Sotavento", "San Antero", "San Bernardo del Viento", "San Carlos",
+                "San José de Uré", "San Pelayo", "Tierralta", "Tuchín", "Valencia"
+            ],
+            "Guainía": ["Inírida"],
+            "Guaviare": ["Calamar", "El Retorno", "Miraflores", "San José del Guaviare"],
+            "Huila": [
+                "Acevedo", "Agrado", "Aipe", "Algeciras", "Altamira", "Baraya", "Campoalegre", "Colombia",
+                "El Pital", "Elías", "Garzón", "Gigante", "Guadalupe", "Hobo", "Íquira", "Isnos", "La Argentina",
+                "La Plata", "Nátaga", "Neiva", "Oporapa", "Paicol", "Palermo", "Palestina", "Pitalito",
+                "Rivera", "Saladoblanco", "San Agustín", "Santa María", "Suaza", "Tarqui", "Tello", "Teruel",
+                "Tesalia", "Timaná", "Villavieja", "Yaguará"
+            ],
+            "La Guajira": [
+                "Albania", "Barrancas", "Dibulla", "Distracción", "El Molino", "Fonseca", "Hatonuevo",
+                "La Jagua del Pilar", "Maicao", "Manaure", "Riohacha", "San Juan del Cesar", "Uribia",
+                "Urumita", "Villanueva"
+            ],
+            "Magdalena": [
+                "Algarrobo", "Aracataca", "Ariguaní", "Cerro de San Antonio", "Chibolo", "Chibolo",
+                "Ciénaga", "Concordia", "El Banco", "El Piñón", "El Retén", "Fundación", "Guamal",
+                "Nueva Granada", "Pedraza", "Pijiño del Carmen", "Pivijay", "Plato", "Pueblo Viejo",
+                "Remolino", "Sabanas de San Ángel", "Salamina", "San Sebastián de Buenavista",
+                "San Zenón", "Santa Ana", "Santa Bárbara de Pinto", "Santa Marta", "Sitionuevo",
+                "Tenerife", "Zapayán", "Zona Bananera"
+            ],
+            "Meta": [
+                "Acacías", "Barranca de Upía", "Cabuyaro", "Castilla la Nueva", "Cubarral", "Cumaral",
+                "El Calvario", "El Castillo", "El Dorado", "Fuente de Oro", "Granada", "Guamal",
+                "La Macarena", "La Uribe", "Lejanías", "Mapiripán", "Mesetas", "Puerto Concordia",
+                "Puerto Gaitán", "Puerto Lleras", "Puerto López", "Puerto Rico", "Restrepo",
+                "San Carlos de Guaroa", "San Juan de Arama", "San Juanito", "San Martín",
+                "Villavicencio", "Vista Hermosa"
+            ],
+            "Nariño": [
+                "Aldana", "Ancuyá", "Arboleda", "Barbacoas", "Belén", "Buesaco", "Chachagüí", "Colón",
+                "Consacá", "Contadero", "Córdoba", "Cuaspud", "Cumbal", "Cumbitara", "El Charco", "El Peñol",
+                "El Rosario", "El Tablón", "El Tambo", "Francisco Pizarro", "Funes", "Guachucal",
+                "Guaitarilla", "Gualmatán", "Iles", "Imués", "Ipiales", "La Cruz", "La Florida", "La Llanada",
+                "La Tola", "La Unión", "Leiva", "Linares", "Los Andes", "Magüí Payán", "Mallama", "Mosquera",
+                "Nariño", "Olaya Herrera", "Ospina", "Pasto", "Policarpa", "Potosí", "Providencia", "Puerres",
+                "Pupiales", "Ricaurte", "Roberto Payán", "Samaniego", "San Bernardo", "San José de Albán",
+                "San Lorenzo", "San Pablo", "San Pedro de Cartago", "Sandoná", "Santa Bárbara", "Santacruz",
+                "Sapuyes", "Taminango", "Tangua", "Tumaco", "Túquerres", "Yacuanquer"
+            ],
+            "Norte de Santander": [
+                "Ábrego", "Arboledas", "Bochalema", "Bucarasica", "Cáchira", "Cácota", "Chinácota", "Chitagá",
+                "Convención", "Cúcuta", "Cucutilla", "Duránia", "El Carmen", "El Tarra", "El Zulia", "Gramalote",
+                "Hacarí", "Herrán", "La Esperanza", "La Playa de Belén", "Labateca", "Los Patios", "Lourdes",
+                "Mutiscua", "Ocaña", "Pamplona", "Pamplonita", "Puerto Santander", "Ragonvalia",
+                "Salazar de Las Palmas", "San Calixto", "San Cayetano", "Santiago", "Santo Domingo de Silos",
+                "Sardinata", "Teorama", "Tibú", "Toledo", "Villa Caro", "Villa del Rosario"
+            ],
+            "Putumayo": [
+                "Colón", "Mocoa", "Orito", "Puerto Asís", "Puerto Caicedo", "Puerto Guzmán", "Puerto Leguízamo",
+                "San Francisco", "San Miguel", "Santiago", "Sibundoy", "Valle del Guamuez", "Villagarzón"
+            ],
+            "Quindío": [
+                "Armenia", "Buenavista", "Calarcá", "Circasia", "Córdoba", "Filandia", "Génova", "La Tebaida",
+                "Montenegro", "Pijao", "Quimbaya", "Salento"
+            ],
+            "Risaralda": [
+                "Apía", "Balboa", "Belén de Umbría", "Dosquebradas", "Guática", "La Celia", "La Virginia",
+                "Marsella", "Mistrató", "Pereira", "Pueblo Rico", "Quinchía", "Santa Rosa de Cabal",
+                "Santuario"
+            ],
+            "San Andrés y Providencia": ["Providencia y Santa Catalina Islas", "San Andrés"],
+            "Santander": [
+                "Aguada", "Albania", "Aratoca", "Barbosa", "Barichara", "Barrancabermeja", "Betulia",
+                "Bolívar", "Bucaramanga", "Cabrera", "California", "Capitanejo", "Carcasí", "Cepitá",
+                "Cerrito", "Charalá", "Charta", "Chima", "Chipatá", "Cimitarra", "Concepción", "Confines",
+                "Contratación", "Coromoro", "Curití", "El Carmen de Chucurí", "El Guacamayo", "El Peñón",
+                "El Playón", "El Socorro", "Encino", "Enciso", "Florián", "Floridablanca", "Galán", "Gámbita",
+                "Girón", "Guaca", "Guadalupe", "Guapotá", "Guavatá", "Güepsa", "Hato", "Jesús María", "Jordán",
+                "La Belleza", "La Paz", "Landázuri", "Lebrija", "Los Santos", "Macaravita", "Málaga", "Matanza",
+                "Mogotes", "Molagavita", "Ocamonte", "Oiba", "Onzaga", "Palmar", "Palmas del Socorro", "Páramo",
+                "Piedecuesta", "Pinchote", "Puente Nacional", "Puerto Parra", "Puerto Wilches", "Rionegro",
+                "Sabana de Torres", "San Andrés", "San Benito", "San Gil", "San Joaquín", "San José de Miranda",
+                "San Miguel", "San Vicente de Chucurí", "Santa Bárbara", "Santa Helena del Opón", "Simacota",
+                "Suaita", "Sucre", "Suratá", "Tona", "Valle de San José", "Vélez", "Vetas", "Villanueva", "Zapatoca"
+            ],
+            "Sucre": [
+                "Buenavista", "Caimito", "Chalán", "Colosó", "Corozal", "Coveñas", "El Roble", "Galeras", "Guaranda",
+                "La Unión", "Los Palmitos", "Majagual", "Morroa", "Ovejas", "Sampués", "San Antonio de Palmito",
+                "San Benito Abad", "San Juan de Betulia", "San Marcos", "San Onofre", "San Pedro", "Sincé", "Sincelejo",
+                "Sucre", "Tolú", "Tolú Viejo"
+            ],
+            "Tolima": [
+                "Alpujarra", "Alvarado", "Ambalema", "Anzoátegui", "Armero", "Ataco", "Cajamarca", "Carmen de Apicalá",
+                "Casabianca", "Chaparral", "Coello", "Coyaima", "Cunday", "Dolores", "El Espinal", "Falán", "Flandes",
+                "Fresno", "Guamo", "Herveo", "Honda", "Ibagué", "Icononzo", "Lérida", "Líbano", "Mariquita", "Melgar",
+                "Murillo", "Natagaima", "Ortega", "Palocabildo", "Piedras", "Planadas", "Prado", "Purificación", "Rioblanco",
+                "Roncesvalles", "Rovira", "Saldaña", "San Antonio", "San Luis", "Santa Isabel", "Suárez", "Valle de San Juan",
+                "Venadillo", "Villahermosa", "Villarrica"
+            ],
+            "Valle del Cauca": [
+                "Alcalá", "Andalucía", "Ansermanuevo", "Argelia", "Bolívar", "Buenaventura", "Buga", "Bugalagrande",
+                "Caicedonia", "Cali", "Calima", "Candelaria", "Cartago", "Dagua", "El Águila", "El Cairo", "El Cerrito",
+                "El Dovio", "Florida", "Ginebra", "Guacarí", "Jamundí", "La Cumbre", "La Unión", "La Victoria", "Obando",
+                "Palmira", "Pradera", "Restrepo", "Riofrío", "Roldanillo", "San Pedro", "Sevilla", "Toro", "Trujillo",
+                "Tuluá", "Ulloa", "Versalles", "Vijes", "Yotoco", "Yumbo", "Zarzal"
+            ],
+            "Vaupés": ["Carurú", "Mitú", "Taraira"],
+            "Vichada": ["Cumaribo", "La Primavera", "Puerto Carreño", "Santa Rosalía"]
+        };
+
+
+
+        // ===================================================================
+        //  FUNCIONES DE LÓGICA DE UBICACIÓN
+        // ===================================================================
+
+        function compareCountries(a, b) {
+            return a.name.localeCompare(b.name);
+        }
+
+        function loadCountries() {
+            var i;
+            countrySelect.innerHTML = '<option value="">Seleccionar País *</option>';
+            ESSENTIAL_COUNTRIES.sort(compareCountries);
+
+            for (i = 0; i < ESSENTIAL_COUNTRIES.length; i++) {
+                var country = ESSENTIAL_COUNTRIES[i];
+                var option = document.createElement('option');
+                option.value = country.code;
+                option.textContent = country.name;
+                countrySelect.appendChild(option);
+            }
+        }
+
+        function toggleLocationFields(isColombia) {
+            if (isColombia) {
+                colombiaSelectorsDiv.style.display = 'flex';
+                ubicacionGenericaInput.style.display = 'none';
+                ubicacionGenericaInput.required = false;
+                loadDepartments();
+            } else {
+                colombiaSelectorsDiv.style.display = 'none';
+                ubicacionGenericaInput.style.display = 'block';
+                ubicacionGenericaInput.required = true;
+
+                departamentoSelect.innerHTML = '<option value="">Seleccionar Departamento *</option>';
+                municipioSelect.innerHTML = '<option value="">Seleccionar Ciudad *</option>';
+                municipioSelect.disabled = true;
+            }
+        }
+
+        function loadDepartments() {
+            var departmentName;
+            departamentoSelect.innerHTML = '<option value="">Seleccionar Departamento *</option>';
+            var departments = Object.keys(COLOMBIA_DATA).sort();
+
+            for (departmentName in departments) {
+                if (departments.hasOwnProperty(departmentName)) {
+                    var name = departments[departmentName];
+                    var option = document.createElement('option');
+                    option.value = name;
+                    option.textContent = name;
+                    departamentoSelect.appendChild(option);
+                }
+            }
+            municipioSelect.innerHTML = '<option value="">Seleccionar Ciudad *</option>';
+            municipioSelect.disabled = true;
+        }
+
+        function loadMunicipalities(departmentName) {
+            var i;
+            municipioSelect.disabled = true;
+            municipioSelect.innerHTML = '<option value="">Cargando Ciudades...</option>';
+
+            if (!departmentName) {
+                municipioSelect.innerHTML = '<option value="">Seleccionar Ciudad *</option>';
+                return;
+            }
+
+            var municipalities = COLOMBIA_DATA[departmentName];
+            municipioSelect.innerHTML = '<option value="">Seleccionar Ciudad *</option>';
+
+            for (i = 0; i < municipalities.length; i++) {
+                var city = municipalities[i];
+                var option = document.createElement('option');
+                option.value = city;
+                option.textContent = city;
+                municipioSelect.appendChild(option);
+            }
+            municipioSelect.disabled = false;
+        }
+
+
+        // ===================================================================
+        //  EVENTO Y ENVÍO A TELEGRAM (CON ANIMACIÓN)
+        // ===================================================================
+        telegramForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // 1. INICIO DE CARGA (Activa la animación CSS)
+            submitButton.setAttribute('data-state', 'loading');
+            statusDiv.style.opacity = 0;
+
+            var form = event.target;
+            var formData = new FormData(form);
+
+            // --- Extracción y Construcción del Mensaje ---
+            var nombre = formData.get('nombre_o_empresa');
+            var telefono = formData.get('telefono');
+            var paisCode = formData.get('pais');
+            var concepto = formData.get('concepto');
+
+            // Obtener el nombre completo del país
+            var paisName = ESSENTIAL_COUNTRIES.filter(function (c) {
+                return c.code === paisCode;
+            })[0].name;
+
+            // Determinar ubicación dinámica
+            var ubicacion = '';
+            if (paisCode === 'CO') {
+                var depto = formData.get('departamento');
+                var munic = formData.get('municipio');
+                ubicacion = depto + ' / ' + munic;
+            } else {
+                ubicacion = formData.get('ubicacion_generica');
+            }
+
+            // Formato profesional del mensaje en HTML para Telegram
+            var messageText = '<b>✨ NUEVO CONCEPTO DE PROYECTO ✨</b>\n\n' +
+                '<b>👤 Cliente:</b> ' + nombre + '\n' +
+                '<b>📞 Contacto:</b> ' + telefono + '\n' +
+                '<b>📍 Ubicación:</b> ' + paisName + ' (' + ubicacion + ')\n\n' +
+                '<b>💡 Concepto del Proyecto:</b>\n' +
+                concepto
+                    .replace(/&/g, '&amp;') // Prevenir doble-escape
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+
+            // URL y parámetros para el método sendMessage
+            var url = 'https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage';
+
+            var params = {
+                chat_id: CHAT_ID,
+                text: messageText,
+                parse_mode: 'HTML'
+            };
+
+            // Construir query string (parámetros de URL)
+            var queryString = Object.keys(params).map(function (key) {
+                return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+            }).join('&');
+
+            // Ejecución del FETCH (GET request)
+            fetch(url + '?' + queryString, {
+                method: 'GET'
+            }).then(function (response) {
+                return response.json().then(function (data) {
+                    if (response.ok && data.ok) {
+                        // 2. ÉXITO (Manejo de animación)
+                        submitButton.setAttribute('data-state', 'success');
+
+                        setTimeout(function () {
+                            statusDiv.classList.add('success');
+                            statusDiv.classList.remove('error');
+                            statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado con éxito! Te contactaré pronto.';
+                            statusDiv.style.opacity = 1;
+                            form.reset();
+                            setTimeout(function () {
+                                submitButton.setAttribute('data-state', 'idle');
+                                statusDiv.style.opacity = 0;
+                            }, 2500);
+                        }, 1000);
+                    } else {
+                        // 3. ERROR de Telegram API
+                        submitButton.setAttribute('data-state', 'error');
+                        setTimeout(function () {
+                            statusDiv.classList.add('error');
+                            statusDiv.classList.remove('success');
+                            statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error al enviar (API).';
+                            statusDiv.style.opacity = 1;
+                            setTimeout(function () {
+                                submitButton.setAttribute('data-state', 'idle');
+                                statusDiv.style.opacity = 0;
+                            }, 3000);
+                        }, 500);
+                    }
+                });
+            }).catch(function (error) {
+                // 3. ERROR de conexión
+                submitButton.setAttribute('data-state', 'error');
+                setTimeout(function () {
+                    statusDiv.classList.add('error');
+                    statusDiv.classList.remove('success');
+                    statusDiv.innerHTML = '<i class="fas fa-times-circle"></i> Error de conexión.';
+                    statusDiv.style.opacity = 1;
+                    setTimeout(function () {
+                        submitButton.setAttribute('data-state', 'idle');
+                        statusDiv.style.opacity = 0;
+                    }, 3000);
+                }, 500);
+            });
+        });
+
+        // Eventos de selección de ubicación
+        countrySelect.addEventListener('change', function (event) {
+            var selectedCode = event.target.value;
+            toggleLocationFields(selectedCode === 'CO');
+        });
+
+        departamentoSelect.addEventListener('change', function (event) {
+            loadMunicipalities(event.target.value);
+        });
+
+        // ===================================================================
+        //  INICIALIZACIÓN
+        // ===================================================================
+        loadCountries();
+        toggleLocationFields(false);
+
+        // Configura la fecha de nacimiento. Puedes cambiarla a la que necesites.
+        const fechaNacimiento = new Date('2003-07-20T00:00:00');
+
+        function actualizarEdad() {
+            const ahora = new Date();
+            const diffEnMilisegundos = ahora - fechaNacimiento;
+
+            // Calcula años y meses
+            const añosCompletos = Math.floor(diffEnMilisegundos / (1000 * 60 * 60 * 24 * 365.25));
+            const mesesTotales = Math.floor(diffEnMilisegundos / (1000 * 60 * 60 * 24 * (365.25 / 12)));
+            const mesesRestantes = mesesTotales % 12;
+
+            const edadElemento = document.getElementById('edad-actual');
+            if (edadElemento) {
+                edadElemento.textContent = `${añosCompletos} años y ${mesesRestantes} meses`;
+            }
+        }
+
+        // Llama a la función una vez al cargar la página
+        actualizarEdad();
+
+        // Actualiza la edad cada hora. Puedes cambiar el valor si necesitas una actualización más o menos frecuente.
+        setInterval(actualizarEdad, 3600000);
+
+    </script>
+</body>
+
+</html>
